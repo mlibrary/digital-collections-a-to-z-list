@@ -1,11 +1,11 @@
 {
-  "siteName": "Design System 11ty Starter",
-  "url": "add-your-url",
-  "siteDescription": "A starter template",
+  "siteName": "Digital Collections",
+  "url": "https://quod.lib.umich.edu/",
+  "siteDescription": "The home page for the Digital Collections.",
   "language": "en",
   "author": {
-    "name": "U-M Library Design System",
-    "url": "your-url",
-    "email": "library-design-system-team@umich.edu"
+    "name": "Digital Collections",
+    "url": "https://quod.lib.umich.edu/",
+    "email": "dcp-tech-build-team@umich.edu"
   }
 }

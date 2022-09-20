@@ -1,7 +1,7 @@
 {
-  "name": "design-system-11ty-starter",
+  "name": "Digital Collections Landing",
   "version": "1.0.0",
-  "description": "Starter template for creating an 11ty (eleventy) project with the U-M Library Design System",
+  "description": "Digital Collections Landing page repository",
   "main": "index.html",
   "scripts": {
     "watch:sass": "sass --no-source-map --watch src/sass:src/css",
@@ -13,10 +13,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mlibrary/design-system-11ty-starter.git"
+    "url": "git+https://github.com/mlibrary/digital-collections-landing.git"
   },
   "keywords": [],
-  "author": "UM Library Design System",
+  "author": "Digital Collections Project Team",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/mlibrary/design-system-11ty-starter/issues"
