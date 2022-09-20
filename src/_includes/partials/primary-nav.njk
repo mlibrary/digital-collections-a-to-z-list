@@ -1,0 +1,11 @@
+<nav aria-label="Primary Navigation" class="left-side-nav">
+  <ul>
+    {% for page in collections.pages %}
+      <li>
+        <a href="{{ page.url }}">
+          {{ page.data.title }}
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+</nav>

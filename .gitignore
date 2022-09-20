@@ -1,0 +1,11 @@
+# Dependency directories
+node_modules/
+
+# 11ty
+public/
+/src/css
+
+# Misc
+.cache
+.env
+.DS_Store

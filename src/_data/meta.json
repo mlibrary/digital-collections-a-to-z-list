@@ -1,0 +1,11 @@
+{
+  "siteName": "Design System 11ty Starter",
+  "url": "add-your-url",
+  "siteDescription": "A starter template",
+  "language": "en",
+  "author": {
+    "name": "U-M Library Design System",
+    "url": "your-url",
+    "email": "library-design-system-team@umich.edu"
+  }
+}
