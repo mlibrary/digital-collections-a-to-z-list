@@ -2,11 +2,6 @@
 layout: base.njk
 ---
 
-<div class="flex-layout">
-  <aside class="aside">
-    {% include "partials/primary-nav.njk" %}
-  </aside>
-  <div class="main-content">
-    {{ content | safe }}
-  </div>
+<div class="main-content">
+  {{ content | safe }}
 </div>

@@ -6,10 +6,12 @@ eleventyNavigation:
   key: home
 ---
 
-# {{ title }}
+# Digital Collections
 
-This is the home page by the {{ meta.author.name }}.
+## Format
 
-Notice anything weird? Have feedback?
+## Explore
+
+### Browse by Topic
 
 Please contact <a href="mailto:{{ meta.author.email | url }}">{{ meta.author.email }}</a>
