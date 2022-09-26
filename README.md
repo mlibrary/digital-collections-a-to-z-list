@@ -19,7 +19,7 @@ npm install
 Start development server, build public folder, and watch Sass files
 
 ```
-npm run start
+npm start
 ```
 
 View in browser
@@ -30,7 +30,7 @@ http://localhost:8080
 
 ## Dev Scripts
 
-- `npm run start` to start the eleventy server (serves the `/public` folder) and watch the Sass folder
+- `npm start` to start the eleventy server (serves the `/public` folder) and watch the Sass `scss` folder
 - `npm build` to create a production build. Outputs into `/public`.
 
 ### Building and watching files
@@ -42,6 +42,7 @@ http://localhost:8080
 ## Resources
 
 **11ty**
+
 Please visit the official [11ty](https://www.11ty.dev/docs/) docs.
 
 ## Bug Reports

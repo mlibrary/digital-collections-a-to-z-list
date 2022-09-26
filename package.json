@@ -1,11 +1,11 @@
 {
-  "name": "Digital Collections Landing",
+  "name": "digital-collections-landing",
   "version": "1.0.0",
   "description": "Digital Collections Landing page repository",
   "main": "index.html",
   "scripts": {
-    "watch:sass": "sass --no-source-map --watch src/sass:src/css",
-    "build:sass": "sass --no-source-map src/sass:public/css",
+    "watch:sass": "sass --no-source-map --watch src/scss:src/css",
+    "build:sass": "sass --no-source-map src/scss:public/css",
     "watch:eleventy": "npx eleventy --serve",
     "build:eleventy": "npx eleventy",
     "start": "npm-run-all build:sass --parallel watch:eleventy watch:sass ",
