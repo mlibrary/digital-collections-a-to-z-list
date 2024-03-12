@@ -20,10 +20,8 @@
  padding: 2rem 0 2rem;
 }
 
-.cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 500px));
-  justify-content: center;
+.tri-cards {
+  display: flex;
   gap: 1rem 2rem;
 
   a {

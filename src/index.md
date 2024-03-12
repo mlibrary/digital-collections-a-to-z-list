@@ -6,12 +6,6 @@ eleventyNavigation:
   key: home
 ---
 
-# Digital Collections
+# {{ meta.siteName }}
+{{ meta.siteDescription }}
 
-## Format
-
-## Explore
-
-### Browse by Topic
-
-Please contact <a href="mailto:{{ meta.author.email | url }}">{{ meta.author.email }}</a>
