@@ -1,6 +1,8 @@
 # Digital Collections
 
-> Maintained by the [Digial Collections Project Tech Build Team](dcp-tech-build-team@umich.edu)
+> Maintained by the [Digital Collections Project Tech Build Team](dcp-tech-build-team@umich.edu)
+
+> Built with the [U-M Library Design System](https://design-system.lib.umich.edu/) & [11ty](https://www.11ty.dev/)
 
 ## Development Quick Start
 

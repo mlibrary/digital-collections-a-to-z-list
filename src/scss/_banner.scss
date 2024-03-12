@@ -1,0 +1,79 @@
+@use 'media';
+// --------------------------------------------------
+//
+// # Banners
+//   1. Banners found above footer
+//   Full width banner containing text feedback form or contact
+//   2. Banners for alerts found under website header
+// --------------------------------------------------
+
+
+// ******************************************** //
+// *** 1. Banners for Feedback and Contact *** //
+// ****************************************** //
+
+.feedback-banner {
+  background-color: var(--color-indigo-100);
+  padding: 1em 0;
+  
+  a {
+    font-weight: bold;
+  }
+}
+
+.feedback-banner-container {
+  display: flex;
+  align-items: center;
+}
+
+.feedback-icon, .contact-icon {
+  border-radius: 100%;
+  margin-right: .5rem;
+  color: var(--color-teal-400);
+}
+
+
+// ******************************************** //
+// *** 2. Banners for Alert *** //
+// ****************************************** //
+
+
+.banner {
+  color: var(--color-neutral-400);
+  padding: 0.5rem 0;
+}
+
+.banner__inner-container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.banner__inner-container > p {
+  margin: 0;
+}
+
+.banner__inner-container > svg {
+  flex-shrink: 0;
+}
+
+.banner--warning {
+  background-color: var(--color-orange-300);
+}
+
+.banner--info {
+  background-color: var(--color-teal-200);
+}
+
+.banner > *:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+.banner > *:first-child {
+    margin-top: 0;
+    padding-top: 0;
+}
+
+.banner + .banner {
+  border-top: 1px solid var(--color-neutral-400);
+}

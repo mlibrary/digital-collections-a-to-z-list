@@ -1,0 +1,62 @@
+@use 'media';
+
+// --------------------------------------------------
+//
+// # Cards
+//   Card for partials/card.njk
+//
+// --------------------------------------------------
+
+:root {
+  --shadow-color: 195deg 67% 34%;
+  --shadow-elevation-medium:
+    0px 0.7px 0.8px hsl(var(--shadow-color) / 0.48),
+    0px 2.3px 2.5px -0.9px hsl(var(--shadow-color) / 0.45),
+    0px 6.2px 6.6px -1.9px hsl(var(--shadow-color) / 0.42),
+    0px 15.6px 16.7px -2.8px hsl(var(--shadow-color) / 0.39);
+}
+
+.card-container {
+ padding: 2rem 0 2rem;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 500px));
+  justify-content: center;
+  gap: 1rem 2rem;
+
+  a {
+    text-decoration: none;
+    transition: box-shadow ease-in .2s;
+    display: inherit;
+    border-radius: 0;
+  }
+
+  a:hover {
+    box-shadow: var(--shadow-elevation-medium); 
+
+    @include media.breakpoint('sm', 'max-width') {
+      box-shadow: none;
+   }
+  }
+}
+
+.card {
+  background-color: var(--color-blue-100);
+  padding: 1rem 1.5rem; 
+  border-radius: 0;
+  border: solid 1px var(--color-neutral-100);
+
+  h2 {
+    font-weight: 600;
+  }
+
+  h2, p {
+    color: var(--color-neutral-400);
+  }
+
+  p {
+    margin-top: .5rem;
+  }
+}

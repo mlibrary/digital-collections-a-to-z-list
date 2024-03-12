@@ -1,0 +1,12 @@
+<div class="card-container">
+  <div class="cards">
+    {% for page in collections.pages %}
+      <a href="{{ page.url }}">
+        <section class="card">
+          <h2>{{ page.data.title }}</h2>
+            <p>{{ page.data.summary }}</p>
+        </section>
+      </a>
+    {% endfor %}
+  </div>
+</div>
