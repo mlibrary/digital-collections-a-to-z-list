@@ -37,7 +37,7 @@ http://localhost:8080
 
 ### Building and watching files
 
-`npm-run-all` is a CLI tool to run multiple npm-scripts in parallel or sequential. This is used in the dev scripts to watch Sass files and hot reload 11ty files in parallel.
+`eleventy-sass` is used as a dev dependency to watch and compile the `.scss` files and output to the `/public/css` directory.
 
 ---
 
