@@ -1,9 +1,21 @@
 const pluginNavigation = require("@11ty/eleventy-navigation");
+const eleventySass = require("eleventy-sass");
 
 module.exports = function(eleventyConfig) {
 
   // Add the plugins used
   eleventyConfig.addPlugin(pluginNavigation);
+  eleventyConfig.addPlugin(eleventySass, {
+    compileOptions: {
+      permalink: function(contents, inputPath) {
+        return (data) => data.page.filePathStem.replace(/^\/scss\//, "/css/") + ".css";
+      }
+    },
+    sass: {
+      style: "expanded",
+      sourceMap: false
+    },
+  });
 
   eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`);
 
@@ -11,8 +23,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addWatchTarget("./src/sass");
 
   // The Pass Through feature tells Eleventy to copy things to our output folder
-  // Eleventy passes through our compiled CSS to the public directory. 
-  eleventyConfig.addPassthroughCopy("./src/css");
+  // Eleventy-sass passes through our compiled CSS to the public directory. 
   eleventyConfig.addPassthroughCopy("./src/img");
 
   return {
@@ -23,4 +34,5 @@ module.exports = function(eleventyConfig) {
       layouts: "_includes/layouts",
     },
   };
+  
 };
