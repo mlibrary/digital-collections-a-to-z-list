@@ -1,4 +1,5 @@
 # Digital Collections A-Z List
+[![Netlify Status](https://api.netlify.com/api/v1/badges/bd80a976-b03f-429c-8fa4-5c3affddeac0/deploy-status)](https://app.netlify.com/sites/digital-collections-a-to-z-list/deploys)
 
 > Maintainers: TBD
 
@@ -9,7 +10,7 @@
 Clone the repo
 
 ```
-git clone https://github.com/mlibrary/digital-collections-landing.git
+git clone https://github.com/mlibrary/digital-collections-a-to-z-list.git
 ```
 
 Install 11ty and dependencies
