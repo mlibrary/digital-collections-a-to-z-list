@@ -1,11 +1,11 @@
 {
-  "name": "digital-collections-landing",
+  "name": "digital-collections-a-to-z-list",
   "version": "1.0.0",
-  "description": "Digital Collections Landing page repository",
+  "description": "Digital Collections A-Z List",
   "main": "index.html",
   "scripts": {
     "start": "npx eleventy --serve",
-    "build": "npx eleventy*"
+    "build": "npx eleventy"
   },
   "repository": {
     "type": "git",
@@ -15,7 +15,7 @@
   "author": "Digital Collections Project Team",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/mlibrary/design-system-11ty-starter/issues"
+    "url": "https://github.com/mlibrary/digital-collections-a-to-z-list/issues"
   },
   "homepage": "https://quod.lib.umich.edu/",
   "devDependencies": {
