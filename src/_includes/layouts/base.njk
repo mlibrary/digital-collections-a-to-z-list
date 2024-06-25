@@ -26,13 +26,13 @@
     </section>
     <div class="headers">
       <m-universal-header></m-universal-header>
+       {% include "partials/banner-alert.njk" %}
       <m-website-header name="{{ meta.siteName }}">
         <div>
           <a href="https://staff.lib.umich.edu/content/usage-and-size-statistics-digital-collections">Usage & Size Statistics</a>
           <a href="mailto:digital-collections-help@umich.edu">Contact Us</a>
         </div>
       </m-website-header>
-      {% include "partials/banner-alert.njk" %}
     </div>
     <main class="layout" id="main">
       {{ content | safe }}
