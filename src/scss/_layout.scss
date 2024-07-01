@@ -1,7 +1,9 @@
+@use 'media';
+
 // --------------------------------------------------
 //
-// # Site Layoyt
-//   Flex for pages
+// # Site Layout
+//  -Flex for pages
 //
 // --------------------------------------------------
 
@@ -12,20 +14,34 @@
 .flex-layout {
   display: flex;
   flex-wrap: wrap;
-  gap: 3rem;
   justify-content: start;
   align-items: stretch;
   padding-top: 2rem;
 }
 
-.flex-layout > :first-child {
-  flex-grow: 1;
-  flex-basis: 12rem;
+.side-panel {
+  max-width: 25%;
+  margin-bottom: 2rem;
+  @include media.breakpoint('sm', 'max-width') {
+    width: 25%;
+  }
 }
 
-.flex-layout > :last-child {
-  flex-basis: 0;
-  flex-grow: 999;
-  min-inline-size: 50%;
+.main-panel {
+  width: 75%;
+  @include media.breakpoint('md', 'max-width') {
+    width: 100%;
+  }
 }
-  
+
+.side-panel__box {
+  display: flex;
+  flex-flow: column wrap;
+  max-width: 80%;
+}
+
+@media screen and (max-width: 751px) {
+  .side-panel__box {
+    max-width: none;
+  }
+}

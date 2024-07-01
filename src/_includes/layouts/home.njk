@@ -12,39 +12,16 @@ layout: base.njk
       </div>
     </div>
 
-    <h2>Search by Format</h2>
-    <div class="card-container">
-    <div class="tri-cards">
-        <a href="#">
-          <section class="card">
-            <h3>Finding Aid Collections</h3>
-          </section>
-        </a>
-         <a href="#">
-          <section class="card">
-            <h3>Image Collections</h3>
-          </section>
-        </a>
-        <a href="#">
-          <section class="card">
-            <h3>Text Collections</h3>
-          </section>
-        </a>
-      </div>
-  </div>
-    <h2>Explore Collections</h2>
-    <h2>Browse by Subject</h2>
-    <ul>
-      <li><a href="">Arts(5)</a></li>
-      <li><a href="">Engineering (2)</a></li>
-      <li><a href="">General Information Sources (53)</a></li>
-      <li><a href="">Government, Politics & Law (3)</a></li>
-      <li><a href="">Health Sciences (5)</a></li>
-      <li><a href="">Humanities (84)</a></li>
-      <li><a href="">International Studies (8)</a></li>
-      <li><a href="">News & Current Events (2)</a></li>
-      <li><a href="">Science (6)</a></li>
-      <li><a href="">Social Sciences (13)</a></li>
-    </ul>
+<div class="flex-layout">
+<div class="side-panel">
+{% include "partials/filter-panel.njk" %}
+</div>
+
+<div class="main-panel">
+<h2>Results</h2>
+<p>Things go here</p>
+</div>
+</div>
+    
 </div>
 {% include "partials/banner-contact.njk" %}

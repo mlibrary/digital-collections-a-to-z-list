@@ -1,0 +1,49 @@
+// --------------------------------------------------
+//
+// # Inputs
+//  
+//
+// --------------------------------------------------
+
+input-container {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  color: var(--color-neutral-300);
+  font-size: 1rem;
+  font-weight: var(--bold);
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.form-instructions {
+  color: var(--color-neutral-300);
+  font-size: 1rem;
+  display: block;
+  margin-top: 0.5rem;
+}
+
+input[type="text"],
+input[type="date"],
+input[type="tel"],
+input[type="time"],
+input[type="number"] {
+  border: solid 1px var(--color-neutral-200);
+  padding: 0.5rem 0.75rem;
+  border-radius: 2px;
+  accent-color: var(--color-teal-400);
+}
+
+textarea {
+  font-family: var(--font-base-family);
+  font-size: 0.95rem;
+  padding: 0.75rem;
+  max-width: 100%;
+  line-height: 1.5;
+  border: solid 1px var(--color-neutral-200);
+  padding: 0.75rem;
+  border-radius: 2px;
+}

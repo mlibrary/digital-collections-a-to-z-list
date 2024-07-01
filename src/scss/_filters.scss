@@ -1,0 +1,63 @@
+@use 'media';
+
+// --------------------------------------------------
+//
+// # Filters
+//   Styles for the U-M Library Design System Filter
+//   Side panel filter
+// --------------------------------------------------
+
+
+details.filter:not(:last-child) {
+  border-bottom: solid 1px var(--color-neutral-100);
+}
+
+details.filter {
+  padding: 0.5em 0;
+}
+
+details.filter > div {
+  padding: 0.25em;
+}
+
+details.filter[open] > summary:first-of-type {
+  font-weight: var(--semibold);
+  color: var(--color-teal-400);
+  border-left: 2px solid var(--color-teal-400);
+  padding: 0.25em 0.5em;
+}
+
+details.filter > summary::after {
+  font-family: "Material Icons";
+  font-size: 24px;
+  content: "\e5cf";
+  color: var(--color-teal-400);
+}
+
+details.filter[open] > summary::after {
+  font-family: "Material Icons";
+  content: "\e5ce";
+  color: var(--color-teal-400);
+}
+
+.filter > summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-left: 2px solid transparent;
+  padding: 0.25em 0.5em;
+  list-style: none;
+  cursor: pointer;
+}
+
+.filters__count {
+  color: var(--color-neutral-300);
+}
+
+.filters__selected > * + * {
+  padding: var(--space-small) 0;
+}
+
+.filter-item--list {
+  overflow: auto;
+}
