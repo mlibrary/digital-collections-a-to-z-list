@@ -3,11 +3,7 @@ layout: base.njk
 ---
 
 <div class="viewport-container">
-{% include "partials/breadcrumbs.njk" %}
 <div class="flex-layout">
-  <aside class="aside">
-    {% include "partials/side-nav.njk" %}
-  </aside>
   <div class="main-content">
     {{ content | safe }}
   </div>

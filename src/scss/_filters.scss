@@ -61,3 +61,12 @@ details.filter[open] > summary::after {
 .filter-item--list {
   overflow: auto;
 }
+
+.filter-item label {
+  color: var(--color-neutral-400);
+  font-size: 1rem;
+  font-weight: normal;
+  text-transform: none;
+  display: block;
+  margin-bottom: 0rem;
+}
