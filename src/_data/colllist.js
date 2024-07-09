@@ -6,12 +6,12 @@ module.exports = async function () {
     duration: '1d',
     type: 'json',
   });
-  data.items.sort((a, b) => {
-    const valueA = a.label.toUpperCase();
-    const valueB = b.label.toUpperCase();
-    if ( valueA < valueB ) { return -1 ; }
-    if ( valueA > valueB ) { return 1; }
-    return 0;
-  });
+  data.items.sort((a, b) => 
+    a.label.localeCompare(
+      b.label, 
+      'en-US',
+      {numeric: true, ignorePunctuation: true}
+    )
+  );
   return data;
 }
