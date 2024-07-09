@@ -20,6 +20,11 @@ layout: base.njk
 <div class="main-panel">
 <h2>Results</h2>
 <p>Things go here</p>
+<ul>
+  {% for item in colllist.items %}
+  <li data-collid="{{ item.collid }}">{{ item.label }} </li>
+  {% endfor %}
+</ul>
 </div>
 </div>
     
