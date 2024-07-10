@@ -70,3 +70,11 @@ details.filter[open] > summary::after {
   display: block;
   margin-bottom: 0rem;
 }
+
+.seperator::after {
+  font-family: "Material Icons";
+  content: "\e315";
+  vertical-align: bottom;
+  color: var(--color-neutral-200);
+  padding-left: 0.25rem;  
+}
