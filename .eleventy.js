@@ -1,5 +1,6 @@
 const pluginNavigation = require("@11ty/eleventy-navigation");
 const eleventySass = require("eleventy-sass");
+const indexer = require('./lib/indexer');
 
 module.exports = function(eleventyConfig) {
 
@@ -21,10 +22,14 @@ module.exports = function(eleventyConfig) {
 
   // The addWatchTarget config method allows you to manually add a file for Eleventy to watch.
   eleventyConfig.addWatchTarget("./src/sass");
+  eleventyConfig.addWatchTarget("./src/js");
 
   // The Pass Through feature tells Eleventy to copy things to our output folder
   // Eleventy-sass passes through our compiled CSS to the public directory. 
   eleventyConfig.addPassthroughCopy("./src/img");
+  eleventyConfig.addPassthroughCopy("./src/js");
+
+  eleventyConfig.on('eleventy.after', indexer);
 
   return {
     passthroughFileCopy: true,
