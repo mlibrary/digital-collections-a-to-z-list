@@ -3,7 +3,7 @@
 // --------------------------------------------------
 //
 // # Site Layout
-//  -Flex for pages
+//  - Grid
 //
 // --------------------------------------------------
 
@@ -11,27 +11,30 @@
   margin: 2rem auto 0;
 }
 
-.flex-layout {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: start;
-  align-items: stretch;
-  padding-top: 2rem;
+.grid-layout {
+  display: grid;
+  position: relative;
+  grid-template-areas:
+      "sidepanel mainpanel ";
+  grid-template-columns: 30% 70%;
+  grid-template-rows: min-content 1fr;
+  margin: 1rem 0;
+  gap: 1rem;
+
+  @include media.breakpoint('md', 'max-width') {
+    grid-template-areas:
+      "sidepanel "
+      " mainpanel ";
+    grid-template-columns: 100%;
+  }
 }
 
 .side-panel {
-  max-width: 25%;
-  margin-bottom: 2rem;
-  @include media.breakpoint('sm', 'max-width') {
-    width: 25%;
-  }
+  grid-area: sidepanel;
 }
 
 .main-panel {
-  width: 75%;
-  @include media.breakpoint('md', 'max-width') {
-    width: 100%;
-  }
+  grid-area: mainpanel;
 }
 
 .side-panel__box {

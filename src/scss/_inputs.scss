@@ -5,7 +5,7 @@
 //
 // --------------------------------------------------
 
-input-container {
+.input-container {
   display: flex;
   flex-direction: column;
 }
@@ -37,6 +37,12 @@ input[type="number"] {
   accent-color: var(--color-teal-400);
 }
 
+input[type="text"] {
+  width: 300px;
+}
+
+/* Textarea */
+
 textarea {
   font-family: var(--font-base-family);
   font-size: 0.95rem;
@@ -46,4 +52,28 @@ textarea {
   border: solid 1px var(--color-neutral-200);
   padding: 0.75rem;
   border-radius: 2px;
+}
+
+/* Checkbox */
+input[type="checkbox"] {
+  accent-color: var(--color-teal-400);
+  width: 16px;
+  height: 16px;
+  margin-right: 0.75rem;
+}
+
+.checkbox-option {
+  display: flex;
+  flex-flow: row wrap;
+  margin: .5rem 0;
+}
+
+.checkbox-option > label {
+  font-family: var(--font-base-family);
+  color: var(--color-neutral-400);
+  font-size: 1rem;
+  font-weight: normal;
+  text-transform: none;
+  display: block;
+  margin-bottom: 0.25rem;
 }
