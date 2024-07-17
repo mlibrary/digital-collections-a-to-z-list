@@ -8,21 +8,45 @@ layout: base.njk
         <div class="hero-banner-text">
           {{ content | safe }}
         </div>
-        <div class="hero-banner-image"></div>
+        <div class="hero-banner-image">
+        </div>
       </div>
     </div>
 
-<div class="flex-layout">
-<div class="side-panel">
-{% include "partials/filter-panel.njk" %}
-</div>
+<div class="grid-layout">
+  <div class="side-panel" id="side-panel">
+  {% include "partials/filter-panel.njk" %}
+  </div>
 
-<div class="main-panel">
-<h2>Results</h2>
-<p>Things go here</p>
-<ul>
+<div class="main-panel" id="main">
+<h2 class="mb-1">Collection Results</h2>
+<ul class="results-list">
   {% for item in colllist.items %}
-  <li data-collid="{{ item.collid }}">{{ item.label }} </li>
+  <li data-collid="{{ item.collid }}">
+    <section class="results-list--grid">
+    <img class="results-list__image" src="https://quod.lib.umich.edu/{{ item.imageURL}}" alt="">
+    <div class="results-card">
+    <div class="results-list__content flex flex-flow-column flex-grow-1">
+      <h3>
+        <a href="{{ item.collhomeURL }}" class="results-link">{{ item.label }}</a>
+      </h3>
+      <p> {{ item.description }} </p>
+    </div>
+  </div>
+  <div class="results-details">
+    <dl class="results">
+      <div data-key="format">
+        <dt data-key="format">Format</dt>
+        <dd>{{ item.format}} </dd>
+      </div>
+      <div data-key="access">
+        <dt data-key="access">Access</dt>
+        <dd>{{ item.access}} </dd>
+      </div>
+    </dl>
+    </div>
+  </section>
+  </li>
   {% endfor %}
 </ul>
 </div>
