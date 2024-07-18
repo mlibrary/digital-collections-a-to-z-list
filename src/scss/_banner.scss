@@ -42,11 +42,22 @@
   }
 
   h1 {
+   display: flex;
+   flex-flow: column wrap;
    max-width: 20ch;
   }
-  p {
-    max-width: 70ch;
+
+  .subtitle {
     font-size: 1.125rem;
+    font-family: var(--font-base-family);
+    text-transform: uppercase;
+    color: var(--color-neutral-300) ;
+    font-weight: bold;
+  }
+
+  p {
+    max-width: 55ch;
+    font-size: 1rem;
   }
 
   @include media.breakpoint('sm', 'max-width') {
