@@ -1,0 +1,36 @@
+<h2 class="mb-1">Collection Results</h2>
+<ul class="results-list">
+  {% for item in colllist.items %}
+  <li data-collid="{{ item.collid }}">
+    <section class="results-list--grid">
+    <img class="results-list__image" src="https://quod.lib.umich.edu/{{ item.imageURL}}" alt="">
+    <div class="results-card">
+    <div class="results-list__content flex flex-flow-column flex-grow-1">
+      <h3>
+        <a href="{{ item.collhomeURL }}" class="results-link">{{ item.label }}</a>
+      </h3>
+      <p> {{ item.description }} </p>
+    </div>
+  </div>
+  <div class="results-details">
+    <dl class="results">
+      <div data-key="format">
+        <dt data-key="format">Format</dt>
+        <dd>{{ item.format}} </dd>
+      </div>
+      <div data-key="access">
+        <dt data-key="access">Access</dt>
+        <dd>{{ item.access}} </dd>
+      </div>
+      <!--
+      <div data-key="categorylinks">
+        <dt data-key="categorylinks">Search Within Groups</dt>
+        <dd></dd>
+      </div>
+      -->
+    </dl>
+    </div>
+  </section>
+  </li>
+  {% endfor %}
+</ul>

@@ -6,7 +6,11 @@ layout: base.njk
    <div class="hero-banner">
       <div class="hero-banner-container">
         <div class="hero-banner-text">
-          {{ content | safe }}
+         <h1>
+          <span class="subtitle">{{ meta.subTitle }}</span>
+          <span>{{ meta.siteName }}</span>
+          </h1>
+          <p>{{ meta.siteDescription }}</p>
         </div>
         <div class="hero-banner-image">
         </div>
@@ -18,39 +22,9 @@ layout: base.njk
   {% include "partials/filter-panel.njk" %}
   </div>
 
-<div class="main-panel" id="main">
-<h2 class="mb-1">Collection Results</h2>
-<ul class="results-list">
-  {% for item in colllist.items %}
-  <li data-collid="{{ item.collid }}">
-    <section class="results-list--grid">
-    <img class="results-list__image" src="https://quod.lib.umich.edu/{{ item.imageURL}}" alt="">
-    <div class="results-card">
-    <div class="results-list__content flex flex-flow-column flex-grow-1">
-      <h3>
-        <a href="{{ item.collhomeURL }}" class="results-link">{{ item.label }}</a>
-      </h3>
-      <p> {{ item.description }} </p>
-    </div>
+  <div class="main-panel" id="main">
+    {% include "partials/results-list.njk" %}
   </div>
-  <div class="results-details">
-    <dl class="results">
-      <div data-key="format">
-        <dt data-key="format">Format</dt>
-        <dd>{{ item.format}} </dd>
-      </div>
-      <div data-key="access">
-        <dt data-key="access">Access</dt>
-        <dd>{{ item.access}} </dd>
-      </div>
-    </dl>
-    </div>
-  </section>
-  </li>
-  {% endfor %}
-</ul>
 </div>
-</div>
-    
 </div>
 {% include "partials/banner-contact.njk" %}

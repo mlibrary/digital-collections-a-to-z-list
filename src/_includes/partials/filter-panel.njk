@@ -1,4 +1,8 @@
 <h2 class="sr-only visually-hidden">Filter to Search Collections</h2>
+<div class="mb-1">
+    <label for="find-collection">Find a Collection</label>
+    <input type="text" id="find-collection" autocomplete="on">
+  </div>
 <div id="current-filters" style="display: none;">
   <h3>Current Filters</h3>
   <div class="side-panel__box">
@@ -6,12 +10,7 @@
     </div>
   </div>
 </div>
-<h2 class="mb-1">Filters</h2>
 <div class="side-panel__box" id="available-filters">
-  <div class="mb-1">
-    <label for="find-collection">Find a Collection</label>
-    <input type="text" id="find-collection">
-  </div>
   <template id="filter-panel-template">
     <details class="filter" data-list-expanded="false">
       <summary>Filter by Format</summary>

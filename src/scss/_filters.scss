@@ -62,6 +62,10 @@ details.filter[open] > summary::after {
   overflow: auto;
 }
 
+.filter-item {
+  padding: .25rem 0;
+}
+
 .filter-item label {
   color: var(--color-neutral-400);
   font-size: 1rem;
@@ -71,10 +75,29 @@ details.filter[open] > summary::after {
   margin-bottom: 0rem;
 }
 
+.filter-item label > span {
+  color: var(--color-neutral-300);
+}
+
 .seperator::after {
   font-family: "Material Icons";
   content: "\e315";
   vertical-align: bottom;
   color: var(--color-neutral-200);
   padding-left: 0.25rem;  
+}
+
+#current-filters {
+  max-width: 80%;
+  padding-bottom: .25rem;
+  margin-bottom: .25rem;
+  border-bottom: solid 1px var(--color-neutral-100);
+}
+
+#current-filters h3 {
+  font-size: 1rem;
+  text-transform: uppercase;
+  color: var(--color-neutral-300);
+  font-weight: bold;
+  padding-top: .5rem;
 }
