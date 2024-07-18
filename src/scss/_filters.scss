@@ -75,6 +75,10 @@ details.filter[open] > summary::after {
   margin-bottom: 0rem;
 }
 
+.filter-item label > span {
+  color: var(--color-neutral-300);
+}
+
 .seperator::after {
   font-family: "Material Icons";
   content: "\e315";
