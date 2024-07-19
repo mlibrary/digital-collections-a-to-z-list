@@ -1,11 +1,9 @@
-const pluginNavigation = require("@11ty/eleventy-navigation");
 const eleventySass = require("eleventy-sass");
 const indexer = require('./lib/indexer');
 
 module.exports = function(eleventyConfig) {
 
   // Add the plugins used
-  eleventyConfig.addPlugin(pluginNavigation);
   eleventyConfig.addPlugin(eleventySass, {
     compileOptions: {
       permalink: function(contents, inputPath) {
