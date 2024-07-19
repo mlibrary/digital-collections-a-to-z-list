@@ -5,29 +5,33 @@
     <section class="results-list--grid">
     <img class="results-list__image" src="https://quod.lib.umich.edu/{{ item.imageURL}}" alt="">
     <div class="results-card">
-    <div class="results-list__content flex flex-flow-column flex-grow-1">
+    <div class="flex flex-flow-column flex-grow-1">
       <h3>
         <a href="{{ item.collhomeURL }}" class="results-link">{{ item.label }}</a>
       </h3>
-      <p> {{ item.description }} </p>
+      <p class="mb-0"> {{ item.description }} </p>
     </div>
   </div>
-  <div class="results-details">
-    <dl class="results">
-      <div data-key="format">
-        <dt data-key="format">Format</dt>
+  <div class="results-dl">
+    <dl>
+      <div class="results-dl-grid">
+        <dt>Format</dt>
         <dd>{{ item.format}} </dd>
       </div>
-      <div data-key="access">
-        <dt data-key="access">Access</dt>
-        <dd>{{ item.access}} </dd>
+      <div class="results-dl-grid">
+        <dt>Access</dt>
+        <dd>{{ item.access | capitalize }} </dd>
       </div>
-      <!--
-      <div data-key="categorylinks">
-        <dt data-key="categorylinks">Search Within Groups</dt>
-        <dd></dd>
+      {% if item.categorylinks != "Collection not in any groups" %}
+       <div class="results-dl-grid">
+        <dt>Search Within Group</dt>
+        <div>
+        {% for link in item.categorylinks %}
+         <dd> {{ link | safe }} </dd>
+        {% endfor %}
+        </div>
       </div>
-      -->
+       {% endif %}
     </dl>
     </div>
   </section>
