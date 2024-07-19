@@ -35,7 +35,7 @@
 
   img {
     padding: .5rem;
-    width: 33%;
+    width: 31%;
     object-fit: cover;
     object-position: center;
     z-index: 1;
@@ -48,6 +48,11 @@
       display: none;
     }
   }
+}
+
+.triad-label {
+  text-align: right;
+  font-size: .95rem;
 }
 
 
