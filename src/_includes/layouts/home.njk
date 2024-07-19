@@ -4,7 +4,6 @@ layout: base.njk
 
 <div class="viewport-container">
    <div class="hero-banner">
-      <div class="hero-banner-container">
         <div class="hero-banner-text">
          <h1>
           <span class="subtitle">{{ meta.subTitle }}</span>
@@ -12,8 +11,24 @@ layout: base.njk
           </h1>
           <p>{{ meta.siteDescription }}</p>
         </div>
-        <div class="hero-banner-image">
-        </div>
+        <div class="hero-banner-images ">
+        <div class="hero-banner-triad">
+          {% for image in banner.images %}
+            <img src="{{ image.src }}" alt="" />
+          {% endfor %}
+           <div class="box-accent-top-left">
+            <svg role="presentation" aria-hidden="true" focusable="false" id="blue-box-svg" viewBox="0 0 280 282">
+            <path class="rectangle" fill="#A7CDDB" stroke="none" d="M0,0h250v250H0V0z"></path>
+             <path class="border" fill="none" stroke="#65A8BF" d="M26.3,28.3h250v250h-250V28.3z"></path>
+          </svg>
+          </div>
+          <div class="box-accent-lower-right">
+            <svg role="presentation" aria-hidden="true" focusable="false" id="blue-box-svg" viewBox="0 0 280 282">
+            <path class="rectangle" fill="#A7CDDB" stroke="none" d="M0,0h250v250H0V0z"></path>
+             <path class="border" fill="none" stroke="#65A8BF" d="M26.3,28.3h250v250h-250V28.3z"></path>
+          </svg>
+          </div>
+          </div>
       </div>
     </div>
 

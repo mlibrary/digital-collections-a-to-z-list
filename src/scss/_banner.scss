@@ -12,14 +12,69 @@
 // *** 1. Banners - Hero *** //
 // ************************ //
 
-
-.hero-banner-container {
-  display: flex;
-} 
+.hero-banner {
+  display: grid;
+  grid-template-areas: 
+   "bannertext bannerimages";
+  grid-template-columns: 1fr 1fr;
+  margin: 1.5rem 0;
+}
 
 .hero-banner-text {
-  width: calc(75% - .5rem);
+  grid-area: bannertext;
 }
+
+.hero-banner-images {
+  grid-area: bannerimages;
+}
+
+.hero-banner-triad {
+  display: flex;
+  height: 300px;
+  position: relative;
+
+  img {
+    padding: .5rem;
+    width: 33%;
+    object-fit: cover;
+    object-position: center;
+    z-index: 1;
+    
+    margin: .5rem;
+    border: solid 0.5px var(--color-teal-200);
+    border-radius: 0;
+
+    @include media.breakpoint('sm', 'max-width') {
+      display: none;
+    }
+  }
+}
+
+
+/*
+.box-accent-top-left {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: 0;
+  left: 0;
+  transform: rotate(180deg);
+  @include media.breakpoint('sm', 'max-width') {
+    display: none;
+  }
+}
+
+.box-accent-lower-right {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  bottom: 0;
+  right: 6px;
+  @include media.breakpoint('sm', 'max-width') {
+    display: none;
+  }
+}
+*/
 
 /*
 .hero-banner-image {
