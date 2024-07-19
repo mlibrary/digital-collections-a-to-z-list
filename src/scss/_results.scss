@@ -43,6 +43,10 @@
   grid-area: title;
 }
 
+.results-card > div > p {
+  max-width: 78ch;
+}
+
 .results {
   margin-top: 0.25em;
 }
