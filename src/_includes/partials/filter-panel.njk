@@ -1,27 +1,37 @@
-<h2 class="sr-only visually-hidden">Filter to Search Collections</h2>
-<div class="mb-1">
-    <label for="find-collection">Find a Collection</label>
-    <input type="text" id="find-collection" autocomplete="on">
-  </div>
-<div id="current-filters" style="display: none;">
-  <h3>Current Filters</h3>
+
+<button class="disclosure-btn" type=button aria-expanded="false"><span class="disclosure-btn-text"><span class="material-symbols-outlined" aria-hidden="true">
+filter_alt
+</span>Filters</span></button>
+  <div class="disclosure-container">
+  <h2 class="sr-only visually-hidden">Filter to Search Collections</h2>
   <div class="side-panel__box">
-    <div class="filter-item--list">    
+  <div class="mb-1 input-container">
+      <label for="find-collection">Find a Collection</label>
+      <input type="text" id="find-collection" aria-describedby="input-description" autocomplete="on">
+      <span class="input-description-text" id="input-description">Begin typing to filter collection results</span>
     </div>
   </div>
-</div>
-<div class="side-panel__box" id="available-filters">
-  <template id="filter-panel-template">
-    <details class="filter" data-list-expanded="false">
-      <summary>Filter by Format</summary>
-      <div class="filter-item--list">
+  <div id="current-filters" style="display: none;">
+    <h3>Current Filters</h3>
+    <div class="side-panel__box">
+      <div class="filter-item--list">    
       </div>
-    </details>
-  </template>
-  <template id="filter-item-template">
-    <div class="flex filter-item gap-0_5 ">
-      <input type="checkbox" id="filter1" name="filter1" value="Filter 1" >
-      <label for="filter1">Filter 1</span></label>
+    <button class="clear-all-btn">Clear all current filters</button>
     </div>
-  </template>
+  </div>
+  <div class="side-panel__box" id="available-filters">
+    <template id="filter-panel-template">
+      <details class="filter" data-list-expanded="false">
+        <summary>Filter by Format</summary>
+        <div class="filter-item--list">
+        </div>
+      </details>
+    </template>
+    <template id="filter-item-template">
+      <div class="flex filter-item gap-0_5 ">
+        <input type="checkbox" id="filter1" name="filter1" value="Filter 1" >
+        <label for="filter1">Filter 1</span></label>
+      </div>
+    </template>
+  </div>
 </div>

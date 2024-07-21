@@ -7,6 +7,26 @@
 //   Side panel filter
 // --------------------------------------------------
 
+/* Find a collection input - sm viewport */
+input[type="text"]#find-collection {
+  @include media.breakpoint('sm', 'max-width') {
+  width: 100%;
+  }
+}
+
+/* Clear all button */
+
+button.clear-all-btn {
+  border: none;
+  display: flex;
+  align-items: flex-start;
+  background-color: #fff;
+  font-family: var(--font-base-family);
+  color: var(--color-neutral-300);
+  text-decoration: underline;
+}
+
+/* Filter  */
 
 details.filter:not(:last-child) {
   border-bottom: solid 1px var(--color-neutral-100);
@@ -49,6 +69,14 @@ details.filter[open] > summary::after {
   list-style: none;
   cursor: pointer;
 }
+
+.filter > summary::-webkit-details-marker {
+  display: none;
+ }
+ 
+ .filter > summary::marker {
+   display: none;
+ }
 
 .filters__count {
   color: var(--color-neutral-300);
@@ -101,3 +129,59 @@ details.filter[open] > summary::after {
   font-weight: bold;
   padding-top: .5rem;
 }
+
+/* For Filter Disclosure - sm viewport */
+
+button.disclosure-btn {
+  font-family: var(--font-base-family);
+  font-size: 1.25rem;
+  color: var(--color-neutral-400);
+  border: solid 1px var(--color-neutral-300);
+  padding: 1rem .5rem;
+  width: 100%;
+  display: none;
+  background: #fff;
+  line-height: 1.5;
+  border-radius: var(--radius-default);
+  
+  @include media.breakpoint('sm', 'max-width') {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .disclosure-btn-text {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: .25rem;
+   }
+}
+
+button[aria-expanded=false] ~ .disclosure-container {
+  @include media.breakpoint('sm', 'max-width') {
+    display: none;
+  }
+}  
+
+.disclosure-container {
+  @include media.breakpoint('sm', 'max-width') {
+    margin: 1rem 0;
+  }
+}
+
+/* Icons to show when disclosure is open or closed */
+
+button.disclosure-btn::after {
+  font-family: "Material Icons";
+  font-size: 1.5rem;
+  content: "\e5cf";
+}
+
+button.disclosure-btn[aria-expanded=true]::after  {
+  font-family: "Material Icons";
+  font-size: 1.5rem;
+  content: "\e5ce";
+}
+

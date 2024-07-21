@@ -10,7 +10,7 @@
 // ## Table of Contents
 //   1. Typography
 //   2. Global elements
-//     2.1 Details <details>
+//     2.1 Disclosure <details>
 //     2.2 Code blocks <pre class="code">
 //     2.3 Blockquotes <blockquote>
 //     2.4 Images
@@ -54,28 +54,9 @@ h1 {
 // ************************* //
 
 
-// 2.1 Details
+// 2.1 Disclosure
 
-/*
 
-details {
-  border: solid 1px var(--color-neutral-100);
-  p {
-    font-size: 1rem;
-    margin: 1rem;
-  }
-} 
-
-summary {
-  border-left: solid 4px var(--color-teal-400);
-  padding: 1rem;
-  list-style: none;
-  cursor: pointer;
-  font-weight: var(--bold);
-  color: var(--color-neutral-400);
-  font-size: 1.25rem;
-}
-*/
 // 2.2 Code block (pre)
 
 pre.code {
@@ -144,6 +125,6 @@ blockquote {
 
 // 3.1 m-website-header
 
-m-website-header a {
+m-website-header a:not(:first-child) {
   padding-left: 1rem;
 }

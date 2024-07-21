@@ -38,7 +38,20 @@ input[type="number"] {
 }
 
 input[type="text"] {
-  width: 275px;
+    max-width: 100%;
+}
+
+input::placeholder  {
+  font-family: var(--font-base-family);
+  color: var(--color-neutral-400);
+  font-size: .95rem;
+}
+
+.input-description-text {
+  color: var(--color-neutral-300);
+  font-size: .95rem;
+  display: block;
+  margin-top: 0.5rem;
 }
 
 /* Textarea */
