@@ -3,9 +3,20 @@ layout: base.njk
 ---
 
 <div class="viewport-container">
-<div class="flex-layout">
-  <div class="main-content">
-    {{ content | safe }}
+<div class="main-content">
+  <div class="grid-404">
+   <h1>
+     <span class="subtitle">404</span>
+     <span>Page Not Found</span>
+    </h1>
+   <div class="content-404">
+      <p>Uh oh! This is not the collection you are looking for!</p>
+      <p>Try starting over and go back to the <a href="{{ meta.url }}">beginning</a>!</p>
+    </div>
+    <div class="image-404">
+    <img src="/img/possum.jpg" alt="">
+    <div class="image-404-label"><a href="https://quod.lib.umich.edu/s/sclaudubon/x-b6719890/29376_0041?lasttype=boolean;lastview=reslist;med=1;resnum=41;size=50;sort=istruct_caption_image_title;start=1;subview=detail;view=entry">Didelphis Virginiana, Pennant. Virginian Opossum. (v. 2, no. 14, plate 66)</a></div>
+    </div>
   </div>
 </div>
 </div>

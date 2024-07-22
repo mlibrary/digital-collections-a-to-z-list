@@ -22,6 +22,10 @@
   gap: 1rem;
 
   @include media.breakpoint('md', 'max-width') {
+    grid-template-columns: 40% 60%;
+  }
+
+  @include media.breakpoint('sm', 'max-width') {
     grid-template-areas:
       "sidepanel "
       " mainpanel ";
@@ -40,11 +44,58 @@
 .side-panel__box {
   display: flex;
   flex-flow: column wrap;
-  max-width: 80%;
+  max-width: 85%;
 }
 
 @media screen and (max-width: 751px) {
   .side-panel__box {
     max-width: none;
+  }
+}
+
+.grid-404 {
+  display: grid;
+  grid-template-areas: 
+     "title img"
+     "content404 img"
+     ".      img";
+  grid-template-columns: 50% 50%;
+  column-gap: 0;
+  margin: 2rem 0;
+
+  h1 {
+    grid-area: title;
+    display: flex;
+    flex-flow: column wrap;
+    max-width: 20ch;
+  }
+
+  .subtitle {
+      font-size: 1.125rem;
+      font-family: var(--font-base-family);
+      text-transform: uppercase;
+      color: var(--color-neutral-300);
+      font-weight: bold;
+  }
+
+  .content-404 {
+    grid-area: content404;
+  }
+
+  .image-404 {
+    grid-area: img;
+  }
+
+  .image-404-label {
+    text-align: right;
+    font-size: .95rem;
+  }
+
+  @include media.breakpoint('sm', 'max-width') {
+    grid-template-areas: 
+     "title "
+     "content404"
+     "img";
+    grid-template-columns: 100%;
   }
 }
