@@ -195,4 +195,16 @@ findCollectionEl.addEventListener('keyup', (event) => {
 // TODO - setup handlers for filter de/selection and weep
 // for jQuery delegation
 
-doSearch(null);
+let initialQuery = null;
+let params = new URLSearchParams(location.search);
+if ( params.has('byText') ) {
+  initialQuery = params.get('byText');
+  findCollectionEl.value = initialQuery;
+  params.delete('byText');
+}
+params.keys().forEach((param) => {
+  let key = param.replace('by', '');
+  activeFilters[key] = params.getAll(param);
+})
+
+doSearch(initialQuery, false);
