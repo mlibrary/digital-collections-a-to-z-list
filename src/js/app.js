@@ -53,7 +53,7 @@ const buildFilterItem = function(key, term, count, idx, checked=false) {
     labelEl.innerHTML = `<span class="seperator">${key}</span> ${term}`;
   } else {
     inputEl.dataset.action = 'add';
-    labelEl.innerHTML = `${term} <span>(${filters[key][term]})</span>`;
+    labelEl.innerHTML = `${term} <span>(${count})</span>`;
   }
   labelEl.setAttribute('for', inputEl.id);
   return item;
