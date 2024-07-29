@@ -21,10 +21,10 @@
   grid-template-areas:
       "thumbnail title "
       ". metadata ";
-  grid-template-columns: 10% 90%;
+  grid-template-columns: 12% 88%;
   grid-template-rows: min-content 1fr;
   margin: 1rem 0;
-  gap: 0 1rem;
+  gap: 0 .75rem;
 
   @include media.breakpoint('sm', 'max-width') {
     grid-template-areas:
@@ -39,7 +39,7 @@
 }
 
 .results-list__image {
-  width: 75px;
+  width: 80px;
   height: auto;
   align-self: flex-start;
   padding: 0;

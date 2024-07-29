@@ -1,3 +1,5 @@
+@use 'media';
+
 // --------------------------------------------------
 //
 // # Base Global Styles
@@ -127,4 +129,27 @@ blockquote {
 
 m-website-header a:not(:first-child) {
   padding-left: 1rem;
+}
+
+m-website-header a {
+  font-size: 0.875rem;
+  text-decoration: none;
+  color: var(--color-neutral-300);
+  text-transform: uppercase;
+  font-weight: var(--bold);
+  letter-spacing: 1.25px;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  @include media.breakpoint('sm', 'max-width') {
+    padding-top: .5rem;
+  }
+}
+
+m-website-header a > .header-nav-text:hover {
+  text-decoration: underline;
+}
+
+m-website-header nav a .material-icons {
+  font-size: 1.5em;
 }
