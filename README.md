@@ -1,7 +1,7 @@
 # Digital Collections A-Z List
 [![Netlify Status](https://api.netlify.com/api/v1/badges/bd80a976-b03f-429c-8fa4-5c3affddeac0/deploy-status)](https://app.netlify.com/sites/digital-collections-a-to-z-list/deploys)
 
-> Maintainers: TBD
+> Maintainer: <img src="https://github.com/user-attachments/assets/c8de0dd7-d3b6-4fd8-8db2-0fba99340680" width="25px" alt="meow_coffee coding cat"/>
 
 > Built with the [U-M Library Design System](https://design-system.lib.umich.edu/) & [11ty](https://www.11ty.dev/)
 
