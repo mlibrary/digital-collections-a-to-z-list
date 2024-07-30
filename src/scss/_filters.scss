@@ -189,3 +189,8 @@ button.disclosure-btn[aria-expanded=true]::after  {
   content: "\e5ce";
 }
 
+::highlight(search-results) {
+  background-color: #FFDA50; // var(--color-maize-300);
+  color: #212B36; // var(--color-neutral-400);
+  -webkit-text-stroke-width: 0.5px;
+}

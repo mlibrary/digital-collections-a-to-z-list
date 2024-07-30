@@ -1,4 +1,7 @@
 const pagefind = await import("/pagefind/pagefind.js");
+await pagefind.options({
+  excerptLength: 1024,
+});
 
 const activeFilters = {};
 const metaFilters = ['Format', 'Access'];
@@ -142,6 +145,46 @@ const updateHistory = function() {
   }
 }
 
+const highlightSearchTerm = function(value, results) {
+  if ( ! CSS.highlights ) { return ; }
+  if ( ! value || ! value.trim() ) { return ; }
+
+  CSS.highlights.clear();
+  const regexp = /<mark>([^<]+)<\/mark>/g;
+  const ranges = [];
+  results.forEach((result) => {
+    let liEl = document.querySelector(`li[data-collid=${result.meta.collid}]`);
+    const matches = [...result.excerpt.matchAll(regexp)];
+    // https://developer.mozilla.org/en-US/docs/Web/API/CSS_Custom_Highlight_API 
+    // uses a treeWalker to find all the text nodes, but we should only have 
+    // the <p>
+    const pEl = liEl.querySelector('p');
+    const textEl = pEl.firstChild;
+    const indicies = [];
+    let text = textEl.textContent;
+    matches.forEach((match) => {
+      let str = match[1];
+      let startPos = 0;
+      while ( startPos < text.length ) {
+        const index = text.indexOf(str, startPos);
+        if ( index === -1 ) { break; }
+        indicies.push([ index, str.length ]);
+        startPos = index + str.length;
+      }
+    })
+
+    indicies.map(([ index, length ]) => {
+      const range = new Range();
+      range.setStart(textEl, index);
+      range.setEnd(textEl, index + length);
+      ranges.push(range);
+    })
+  })
+
+  const searchResultsHighlight = new Highlight(...ranges.flat());
+  CSS.highlights.set("search-results", searchResultsHighlight);
+}
+
 const clearActiveFilters = function() {
   // reset active filters
   Object.keys(activeFilters).forEach((key) => {
@@ -163,14 +206,16 @@ window.addEventListener('popstate', (event) => {
 
 const doSearch = async function(value, doUpdateHistory=true) {
   if ( ! value ) { value = null; }
-  const search = await pagefind.search(value, {
+  const search = await pagefind.debouncedSearch(value, {
     filters: activeFilters,
   })
+  if ( ! search.results ) { return ; }
   const results = await Promise.all(search.results.map(r => r.data()));
   updateActiveFilterStyles(results.map(r => r.meta.collid));
   updateAvailableFilters(search.filters);
   updateCurrentFilters(search.filters);
   updateResultsHeading(results.length);
+  highlightSearchTerm(value, results);
   if ( doUpdateHistory ) {
     updateHistory();
   }
@@ -202,9 +247,12 @@ if ( params.has('byText') ) {
   findCollectionEl.value = initialQuery;
   params.delete('byText');
 }
-params.keys().forEach((param) => {
+
+for (const param of params.keys()) {
   let key = param.replace('by', '');
-  activeFilters[key] = params.getAll(param);
-})
+  if ( filters[key] ) {
+    activeFilters[key] = params.getAll(param);
+  }
+}
 
 doSearch(initialQuery, false);
