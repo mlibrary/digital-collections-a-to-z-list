@@ -130,6 +130,10 @@ details.filter[open] > summary::after {
   padding-top: .5rem;
 }
 
+.filter-item > input[type="checkbox"] {
+  flex-shrink: 0;
+}
+
 /* For Filter Disclosure - sm viewport */
 
 button.disclosure-btn {

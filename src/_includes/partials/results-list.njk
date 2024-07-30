@@ -4,7 +4,7 @@
   {% for item in colllist.items %}
   <li data-collid="{{ item.collid }}">
     <section class="results-list--grid">
-    <img class="results-list__image" src="https://quod.lib.umich.edu/{{ item.imageURL}}" alt="">
+    <img loading="lazy" class="results-list__image" src="https://quod.lib.umich.edu/{{ item.imageURL}}" alt="">
     <div class="results-card">
     <div class="flex flex-flow-column flex-grow-1">
       <h3>
