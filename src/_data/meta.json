@@ -2,6 +2,7 @@
   "siteName": "Digital Collections",
   "subTitle": "A-Z List",
   "url": "https://quod.lib.umich.edu/",
+  "contact": "https://quod.lib.umich.edu/cgi/t/text/feedback-idx?page=feedback&m=colllist",
   "siteDescription": "Discover digitized images, texts, and more from libraries and museums across campus and the region. You can use the collections for teaching, learning, research, and scholarship.",
   "language": "en",
   "author": {
