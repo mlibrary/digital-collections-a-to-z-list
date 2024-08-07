@@ -17,7 +17,11 @@
     <dl>
       <div class="results-dl-grid">
         <dt>Format</dt>
-        <dd>{{ item.format}} </dd>
+        <div>
+        {% for format in item.format %}
+          <dd>{{ format}}</dd>
+        {% endfor %}
+        </div>
       </div>
       <div class="results-dl-grid">
         <dt>Access</dt>
