@@ -98,6 +98,7 @@ const updateAvailableFilters = function(filters) {
   availableFiltersEl.querySelectorAll('.filter').forEach((el) => el.remove());
   availableKeys.forEach((key) => {
     let panel; let div;
+    if ( filters[key] == null ) { return ; }
     Object.keys(filters[key]).forEach((term, termIdx) => {
       if ( ignoreFilters.includes(key) ) { return ; }
       if ( activeFilters[key] ) {
@@ -128,6 +129,7 @@ const updateAvailableFilters = function(filters) {
 const updateResultsHeading = function(total) {
   let suffix = ( total == 1 ) ? 'result' : 'results';
   resultsHeadingEl.innerHTML = `${total} ${suffix}`;
+  document.body.dataset.totalResults = total;
 }
 
 const updateHistory = function() {
@@ -210,6 +212,7 @@ const doSearch = async function(value, doUpdateHistory=true) {
   const search = await pagefind.debouncedSearch(value, {
     filters: activeFilters,
   })
+  if ( ! search ) { return; }
   if ( ! search.results ) { return ; }
   const results = await Promise.all(search.results.map(r => r.data()));
   updateActiveFilterStyles(results.map(r => r.meta.collid));
