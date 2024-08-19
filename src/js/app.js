@@ -190,6 +190,7 @@ const clearActiveFilters = function() {
   Object.keys(activeFilters).forEach((key) => {
     delete activeFilters[key];
   })
+  findCollectionEl.value = '';
 }
 
 window.addEventListener('popstate', (event) => {
