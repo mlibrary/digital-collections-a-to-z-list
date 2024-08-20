@@ -1,0 +1,52 @@
+@use 'media';
+
+// --------------------------------------------------
+//
+// # Callout
+//   Styles for the U-M Library Design System Callout
+// --------------------------------------------------
+
+.callout {
+  color: var(--color-neutral-400);
+  border-width: 1px 1px 1px 4px;
+  border-style: solid;
+  border-radius: 4px;
+  margin: 2rem 0px;
+  padding: 1.5rem;
+  max-width: 40rem;
+  display: grid;
+  grid-template-areas: 
+   "icon message"
+   "...  message";
+   grid-template-columns: 5% 95%;
+   gap: .5rem;
+   align-items: center;
+}
+
+@media screen and (max-width: 751px) {
+  .callout {
+    grid-template-areas: 
+   "icon ..."
+   "message message";
+  }
+}
+
+.callout__icon {
+  grid-area: icon;
+}
+
+.callout__message {
+  grid-area: message;
+}
+
+/* Callout types */
+
+.callout--info {
+  background-color: var(--color-teal-100);
+  border-color: var(--color-neutral-100) var(--color-neutral-100) var(--color-neutral-100) var(--color-teal-400);
+}
+
+.callout--warning {
+  background-color: var(--color-orange-100);
+  border-color: var(--color-neutral-100) var(--color-neutral-100) var(--color-neutral-100) var(--color-orange-400);
+}
