@@ -36,7 +36,6 @@ sidePanelEl.addEventListener('change', (event) => {
     }
   } else {
     activeFilters[key].push(value);
-    sidePanelEl.scrollIntoView({ behavior: "smooth", block: "start"});
   }
   doSearch(findCollectionEl.value);
 })
