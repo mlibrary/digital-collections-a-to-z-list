@@ -1,5 +1,6 @@
 const eleventySass = require("eleventy-sass");
 const indexer = require('./lib/indexer');
+const { EleventyHtmlBasePlugin } = require("@11ty/eleventy");
 
 module.exports = function(eleventyConfig) {
 
@@ -15,6 +16,8 @@ module.exports = function(eleventyConfig) {
       sourceMap: false
     },
   });
+
+  eleventyConfig.addPlugin(EleventyHtmlBasePlugin);
 
   eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`);
 
