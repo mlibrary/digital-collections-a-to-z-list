@@ -11,6 +11,15 @@
   padding-left: 0;
 }
 
+// If no results
+.no-results {
+  display: none;
+}
+
+body[data-total-results="0"] .no-results { 
+  display: block !important;
+}
+
 // Grid for results: thumbnail, title, and metadata
 .results-list--grid {
   border-bottom: 1px solid var(--color-neutral-100);
