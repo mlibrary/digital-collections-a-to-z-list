@@ -1,18 +1,18 @@
 { "images": [
     {
-    "src": "/img/imageaudubon_v2_2_p156.jpg",
+    "src": "/img/imageaudubon_v2_2_p156.webp",
     "alt": "",
     "title": "American Crow, Corvus Americanus. (Plate CLVI)",
     "linkSrc": "https://quod.lib.umich.edu/s/sclaudubon/B7449301/AUDUBON_V2_2_P156?chaperone=S-SCLAUDUBON-X-B7449301+AUDUBON_V2_2_P156;fn1=is_part_of__work_title_;fq1=The+birds+of+America%3B+from+original+drawings+by+John+James+Audubon;lasttype=boolean;lastview=reslist;resnum=5;size=50;sort=istruct_caption_image_title;start=1;subview=detail;view=entry;rgn1=istruct_caption_image_title;q1=*"
   },
   {
-    "src": "/img/imageaudubon_v2_2_p159.jpg",
+    "src": "/img/imageaudubon_v2_2_p159.webp",
     "alt": "",
     "title": "Cardinal Grosbeak, Fringila Cardinalis, Bonap. (Plate CLIX)",
     "linkSrc": "https://quod.lib.umich.edu/s/sclaudubon/B7449301/AUDUBON_V2_2_P159?chaperone=S-SCLAUDUBON-X-B7449301+AUDUBON_V2_2_P159;fn1=is_part_of__work_title_;fq1=The+birds+of+America%3B+from+original+drawings+by+John+James+Audubon;lasttype=boolean;lastview=reslist;resnum=5;size=50;sort=istruct_caption_image_title;start=1;subview=detail;view=entry;rgn1=istruct_caption_image_title;q1=*"
   },
   {
-    "src" : "/img/imageB7449300.jpg",
+    "src" : "/img/imageB7449300.webp",
     "alt": "",
     "name": "Blue Jay, Corvus Cristatus. (Plate CII)",
     "link": "https://quod.lib.umich.edu/s/sclaudubon/x-b7449300/AUDUBON_V2_1_P102?lasttype=boolean;lastview=reslist;med=1;resnum=18;size=50;sort=istruct_caption_image_title;start=1;subview=detail;view=entry"
