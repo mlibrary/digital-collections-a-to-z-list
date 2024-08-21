@@ -56,10 +56,11 @@
 .grid-404 {
   display: grid;
   grid-template-areas: 
-     "title img"
+     "title      img"
      "content404 img"
-     ".      img";
-  grid-template-columns: 50% 50%;
+     "..         img"
+     "..         imglabel";
+  grid-template-columns: 55% 45%;
   column-gap: 0;
   margin: 2rem 0;
 
@@ -86,16 +87,25 @@
     grid-area: img;
   }
 
+  .image-404 img {
+    border: solid .5px var(--color-teal-200);
+    border-radius: 0;
+    padding: 0.5rem;
+    margin: 0.5rem;
+  }
+
   .image-404-label {
+    grid-area: imglabel;
     text-align: right;
     font-size: .95rem;
   }
 
-  @include media.breakpoint('sm', 'max-width') {
+  @include media.breakpoint('md', 'max-width') {
     grid-template-areas: 
      "title "
      "content404"
-     "img";
+     "img"
+     "imglabel";
     grid-template-columns: 100%;
   }
 }

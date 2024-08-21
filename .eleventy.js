@@ -11,7 +11,7 @@ module.exports = function(eleventyConfig) {
       }
     },
     sass: {
-      style: "expanded",
+      style: "compressed",
       sourceMap: false
     },
   });
