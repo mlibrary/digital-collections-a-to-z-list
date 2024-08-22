@@ -17,9 +17,7 @@ module.exports = function(eleventyConfig) {
     },
   });
 
-  eleventyConfig.addPlugin(EleventyHtmlBasePlugin, {
-    baseHref: '/'
-  });
+  eleventyConfig.addPlugin(EleventyHtmlBasePlugin);
 
   eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`);
 
