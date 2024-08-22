@@ -1,4 +1,4 @@
-const pagefind = await import("/pagefind/pagefind.js");
+const pagefind = await import(`${document.documentElement.dataset.baseUrl}pagefind/pagefind.js`);
 await pagefind.options({
   excerptLength: 1024,
 });

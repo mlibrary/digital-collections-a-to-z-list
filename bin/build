@@ -1,0 +1,19 @@
+#!/bin/bash
+
+BINDIR=`dirname $0`
+REPODIR=`realpath $BINDIR/..`
+REPO=`basename $REPODIR`
+WEBDIR=`realpath $BINDIR/../..`
+
+cd $REPODIR
+pwd
+npx eleventy --pathprefix a-z --output $WEBDIR
+cd $WEBDIR
+if [ ! -L ./pagefind ]
+then
+  echo "-- a-z configure pagefind symlink"
+  ln -s "./$REPO/public/pagefind" .
+fi
+
+echo "== a-z done"
+
