@@ -4,8 +4,8 @@
   "description": "Digital Collections A-Z List",
   "main": "index.html",
   "scripts": {
-    "start": "npx eleventy --pathPrefix / --serve",
-    "build": "npx eleventy --pathPrefix /"
+    "start": "npx eleventy --pathprefix / --serve",
+    "build": "npx eleventy --pathprefix /"
   },
   "repository": {
     "type": "git",
