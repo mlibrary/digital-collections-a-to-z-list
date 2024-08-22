@@ -22,7 +22,7 @@ fi
 
 mv .cache/prep.md5 .cache/last.md5
 
-npx eleventy --pathprefix a-z --output $WEBDIR
+COLLLIST_DATA=$REPODIR/.cache/colllist.json npx eleventy --pathprefix a-z --output $WEBDIR
 cd $WEBDIR
 if [ ! -L ./pagefind ]
 then
