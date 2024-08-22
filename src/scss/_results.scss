@@ -73,38 +73,23 @@ body[data-total-results="0"] .no-results {
   grid-area: metadata;
 }
 
-// Grid for results dl: dt and dd for multiple dds
-.results-dl-grid {
+// Grid for the dl within metadata area
+
+dl.results-dl {
   display: grid;
-  grid-template-areas: 
-     "categorylinksdt categorylinksdd";
   grid-template-columns: 12rem 1fr;
-  column-gap: 0;
-  max-width: 65vw;
-  @include media.breakpoint('sm', 'max-width') {
-    grid-template-areas: 
-    "categorylinksdt"
-    "categorylinksdd";
-    grid-template-columns: 100%;
-    margin: .25rem 0;
-    }
 }
 
-.results-dl-grid dt {
-  grid-area: categorylinksdt;
+.results-dl > dt {
+  grid-column: 1/2;
   font-weight: var(--bold);
-  text-transform: capitalize;
   padding: var(--space-xxx-small) 0;
   margin-left: 0;
 }
 
-.results-dl-grid dd {
-  grid-area: categorylinksdd;
-  padding-left: var(--space-small);
+.results-dl > dd {
+  grid-column: 2/3;
   margin-left: 0;
-  @include media.breakpoint('sm', 'max-width') {
-    padding: 0;
-  }
 }
 
 .results-heading {
