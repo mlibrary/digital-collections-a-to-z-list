@@ -7,7 +7,22 @@ WEBDIR=`realpath $BINDIR/../..`
 
 cd $REPODIR
 pwd
-npx eleventy --pathprefix a-z --output $WEBDIR
+
+curl -o .cache/colllist.json "https://quod.lib.umich.edu/cgi/c/collsize/colllist?sponsor=DCC"
+md5sum .cache/colllist.json > .cache/prep.md5
+if [ -f .cache/last.md5 ]
+then
+  cmp -s .cache/prep.md5 .cache/last.md5
+  if [ $? -eq 0 ]
+  then
+    echo "-- no changes: punting"
+    exit
+  fi
+fi
+
+mv .cache/prep.md5 .cache/last.md5
+
+COLLLIST_DATA=$REPODIR/.cache/colllist.json npx eleventy --pathprefix a-z --output $WEBDIR
 cd $WEBDIR
 if [ ! -L ./pagefind ]
 then
