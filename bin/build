@@ -5,6 +5,16 @@ REPODIR=`realpath $BINDIR/..`
 REPO=`basename $REPODIR`
 WEBDIR=`realpath $BINDIR/../..`
 
+if [ ! command -v npx >/dev/null 2>&1 ]
+then
+  # this is terrible! my kingdom for a container
+  NVMROOT=/l1/dev/roger
+  export npm_config_cache=/tmp/$$/.npm
+  export NVM_DIR="$NVMROOT/sandbox/nvm"
+  source "$NVM_DIR/nvm.sh"
+  nvm use v18
+fi
+
 LOGFILE=/tmp/rsync.a-z.log
 rm -f $LOGFILE
 
@@ -76,7 +86,7 @@ then
 fi
 
 cd $WEBDIR
-/usr/bin/rsync -av --exclude=.git --exclude=.cache --exclude=node_modules --exclude=src --exclude=var/* --log-file=$LOGFILE --log-file-format="File changed! %f %i" .  /quod/web/a-z
+/usr/bin/rsync -av --exclude=.git --exclude=.cache --exclude=node_modules --exclude=src --exclude=var/* --log-file=$LOGFILE --log-file-format="File changed! %f %i" .  /tmp/web/a-z
 RESULT=$?
 if [[ $RESULT -gt 0 ]]
 then
