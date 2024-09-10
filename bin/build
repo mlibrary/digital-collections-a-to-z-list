@@ -39,7 +39,7 @@ done
 cd $REPODIR
 pwd
 
-curl -o .cache/colllist.json "https://quod.lib.umich.edu/cgi/c/collsize/colllist?sponsor=DCC"
+curl -s -o .cache/colllist.json "https://quod.lib.umich.edu/cgi/c/collsize/colllist?sponsor=DCC"
 md5sum .cache/colllist.json > .cache/prep.md5
 if [ -f .cache/last.md5 ]
 then
@@ -76,7 +76,7 @@ then
 fi
 
 cd $WEBDIR
-rsync -av --exclude=.git --exclude=.cache --exclude=node_modules --exclude=src --exclude=var/* --log-file=$LOGFILE --log-file-format="File changed! %f %i" .  /quod/web/a-z
+/usr/bin/rsync -av --exclude=.git --exclude=.cache --exclude=node_modules --exclude=src --exclude=var/* --log-file=$LOGFILE --log-file-format="File changed! %f %i" .  /quod/web/a-z
 RESULT=$?
 if [[ $RESULT -gt 0 ]]
 then
