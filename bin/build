@@ -11,6 +11,8 @@ then
   PATH=/l1/dev/roger/sandbox/nvm/versions/node/v18.17.1/bin:$PATH
   npm_config_cache=/l1/dev/roger/.npm
 fi
+npm_config_cache=/l1/dev/roger/.npm
+export npm_config_cache
 
 LOGFILE=/tmp/rsync.a-z.log
 rm -f $LOGFILE
